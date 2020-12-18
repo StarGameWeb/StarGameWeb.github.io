@@ -5,7 +5,8 @@ signIn.addEventListener('click', () => {
 	auth.signInWithPopup(provider).then(function(result) {
 		var token = result.credential.idToken;
 		var user = result.user;
-		
+		window.location.pathname = '/overview.html'
+
 	}).catch(function(error) {
 		
 		var errorCode = error.code;
@@ -15,11 +16,4 @@ signIn.addEventListener('click', () => {
 		
 		var credential = error.credential;
 	});
-});
-
-auth.onAuthStateChanged(user => {
-	if (user) {
-		if (window.location.pathname == '/index.html')
-			window.location.pathname = '/overview.html'
-	}
 });
