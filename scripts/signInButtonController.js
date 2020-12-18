@@ -17,3 +17,9 @@ signIn.addEventListener('click', () => {
 		var credential = error.credential;
 	});
 });
+
+auth.onAuthStateChanged(user => {
+	if (user) {
+	    window.location.pathname = '/overview.html'
+	}
+});
