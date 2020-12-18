@@ -1,3 +1,8 @@
+var user = firebase.auth().currentUser;
+if (user) {
+	window.location.pathname = '/overview.html'
+}
+
 const signIn = document.getElementById('signIn');
 signIn.addEventListener('click', () => {
     	
@@ -16,10 +21,4 @@ signIn.addEventListener('click', () => {
 		
 		var credential = error.credential;
 	});
-});
-
-auth.onAuthStateChanged(user => {
-	if (user) {
-	    window.location.pathname = '/overview.html'
-	}
 });
