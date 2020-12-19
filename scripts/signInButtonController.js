@@ -1,7 +1,10 @@
-var user = firebase.auth().currentUser;
-if (user) {
-	window.location.pathname = '/overview.html'
-}
+auth.onAuthStateChanged(function(user) {
+	if (user) {
+	  console.log('logged in');
+	} else {
+		console.log('logged out');
+	}
+  });
 
 const signIn = document.getElementById('signIn');
 signIn.addEventListener('click', () => {

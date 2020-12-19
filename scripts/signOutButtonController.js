@@ -1,4 +1,4 @@
-var user = firebase.auth().currentUser;
+var user = auth.currentUser;
 if (!user) {
 	window.location.pathname = '/index.html'
 }
