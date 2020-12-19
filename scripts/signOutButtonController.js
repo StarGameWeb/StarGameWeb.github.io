@@ -1,7 +1,8 @@
-var user = auth.currentUser;
-if (!user) {
-	window.location.pathname = '/index.html'
-}
+auth.onAuthStateChanged(function(user) {
+	if (!user) {
+		window.location.pathname = '/index.html'
+	}
+});
 
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
